@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gujarati Trader | Official Telegram Channel</title>
-  <meta name="description" content="Join Gujarati Trader – Free Signals, Daily Analysis & Smart Risk Management. India’s Most Trusted Stock Market Community.">
+  <meta name="description" content="Join Gujarati Trader – India’s Most Trusted Stock Market Community.">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
 
   <meta property="og:title" content="Gujarati Trader | Official Telegram">
-  <meta property="og:description" content="Free Signals • Daily Analysis • Smart Risk Management">
+  <meta property="og:description" content="Join Gujarati Trader Telegram Channel">
   <meta property="og:image" content="https://via.placeholder.com/1200x630/000000/c9a227?text=Gujarati+Trader">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -124,13 +124,8 @@
       font-size:26px;
       font-weight:800;
       line-height:1.3;
-      margin-bottom:14px;
+      margin-bottom:28px;
       letter-spacing:-0.3px;
-    }
-    .sub{
-      font-size:14px;
-      color:#9ca3af;
-      margin-bottom:40px;
     }
 
     .card{
@@ -206,7 +201,6 @@
     </a>
 
     <h2 class="headline">India’s Most Trusted<br>Stock Market Community</h2>
-    <p class="sub">Free Signals • Daily Analysis • Smart Risk Management</p>
 
     <div class="card">
       <div class="item">
@@ -219,11 +213,11 @@
       </div>
       <div class="item">
         <div class="icon">🛡️</div>
-        <div class="txt">Risk Management Focused Strategy</div>
+        <div class="txt">Proper Position Sizing & Strategy</div>
       </div>
       <div class="item">
         <div class="icon">💧</div>
-        <div class="txt">Daily Free & Premium Market Analysis</div>
+        <div class="txt">Daily Market Analysis & Guidance</div>
       </div>
     </div>
 
@@ -231,16 +225,28 @@
 
   <script>
     (function(){
-      var btn=document.getElementById('join-btn');
-      if(!btn)return;
-      var fired=false;
-      btn.addEventListener('click',function(e){
-        if(!e.isTrusted||fired||typeof fbq!=='function')return;
-        try{
-          fbq('track','Lead',{content_name:'Telegram Channel Join',content_category:'Subscribe',value:1,currency:'INR'});
-          fired=true;
-        }catch(err){}
-      },{passive:true});
+      var btn = document.getElementById('join-btn');
+      if (!btn) return;
+
+      var fired = false;
+
+      function sendLead() {
+        if (fired) return;
+        if (typeof fbq !== 'function') return;
+
+        try {
+          fbq('track', 'Lead', {
+            content_name: 'Telegram Channel Join',
+            content_category: 'Subscribe',
+            value: 1,
+            currency: 'INR'
+          });
+          fired = true;
+        } catch (e) {}
+      }
+
+      btn.addEventListener('click', sendLead);
+      btn.addEventListener('touchstart', sendLead, {passive: true});
     })();
   </script>
 </body>
